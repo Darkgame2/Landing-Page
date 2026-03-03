@@ -1,1 +1,311 @@
-# Landing-Page
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignasius Angello | Profile Portfolio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --base-color: #F8F9FA;
+            --primary-color: #2C3E50;
+            --secondary-color: #3498DB;
+            --accent-color: #1ABC9C;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+        }
+
+        /* Dark Mode Colors */
+        [data-bs-theme="dark"] {
+            --base-color: #121212;
+            --primary-color: #0f172a;
+            --secondary-color: #3498DB;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--base-color); 
+            color: var(--text-main); 
+            transition: background-color 0.3s ease, color 0.3s ease;
+            scroll-behavior: smooth; 
+        }
+        
+        h1, h2, h3, .navbar-brand { font-family: 'Poppins', sans-serif; }
+
+        /* Navbar */
+        .navbar { background-color: var(--primary-color); box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-link:hover { color: var(--accent-color) !important; }
+
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a252f 100%); 
+            color: white; 
+            padding: 120px 0 80px; 
+        }
+        
+        /* Section Styling */
+        section { padding: 80px 0; }
+        .section-title { 
+            border-bottom: 4px solid var(--secondary-color); 
+            display: inline-block; 
+            margin-bottom: 50px; 
+            padding-bottom: 10px; 
+            font-weight: bold;
+        }
+
+        /* Card Customization */
+        .card { 
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            border: none; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+            border-radius: 15px; 
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        
+        .badge-verified { 
+            max-width: 80px; 
+            transition: 0.3s; 
+        }
+        .badge-verified:hover { transform: scale(1.1); }
+
+        /* Icons & Buttons */
+        .icon-box {
+            width: 60px; height: 60px;
+            background-color: rgba(52, 152, 219, 0.1);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-link { 
+            font-size: 1.8rem; color: white; margin-right: 20px; 
+            transition: 0.3s; text-decoration: none;
+        }
+        .social-link:hover { color: var(--accent-color); transform: scale(1.1); }
+
+        .btn-custom { 
+            background-color: var(--secondary-color); border: none; color: white; 
+            padding: 12px 30px; border-radius: 30px; font-weight: bold;
+        }
+        .btn-custom:hover { background-color: #2980b9; color: white; }
+
+        .bg-light-custom { background-color: rgba(0,0,0,0.02); }
+        [data-bs-theme="dark"] .bg-light-custom { background-color: rgba(255,255,255,0.02); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"><i class="fa-solid fa-terminal me-2"></i>HI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase fw-semibold" style="font-size: 0.85rem;">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-outline-light btn-sm mt-1" id="darkModeToggle">
+                            <i class="fa-solid fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero text-center">
+        <div class="container">
+            <img src="fotoprofile.jpg" class="rounded-circle mb-4 border border-5 border-light shadow-lg" alt="Ignasius Angello" style="width: 180px; height: 180px; object-fit: cover;">
+            <h1 class="display-3 fw-bold">Ignasius Angello</h1>
+            <p class="lead mb-4">Informatics Student @ Universitas Ma Chung | Back-end & Network Explorer</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#projects" class="btn btn-custom">View My Projects</a>
+                <a href="https://github.com/Darkgame2" target="_blank" class="btn btn-outline-light rounded-pill px-4">
+                    <i class="fab fa-github me-2"></i>GitHub
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h2 class="section-title">Tentang Saya</h2>
+                    <p class="lead fw-bold" style="color: var(--secondary-color);">Mahasiswa Teknik Informatika Universitas Ma Chung.</p>
+                    <p>Saya antusias dalam dunia IT, khususnya manajemen basis data (SQL) dan infrastruktur jaringan. Saya senang memecahkan masalah melalui normalisasi data dan konfigurasi sistem jaringan yang efisien.</p>
+                    <p>Selain fokus akademik, saya juga mengeksplorasi teknologi masa depan seperti <strong>Sui Blockchain</strong> dan pengembangan DApps.</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="card p-5 shadow border-0">
+                        <img src="https://machung.ac.id/wp-content/themes/brew-master/images/images-ps/logo-umc.png" alt="Ma Chung" class="img-fluid mx-auto mb-4" style="max-height: 100px;">
+                        <h4 class="fw-bold">Pendidikan</h4>
+                        <p class="mb-0">S1 Teknik Informatika</p>
+                        <p class="text-muted small">Angkatan 2024 - Sekarang</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="bg-light-custom">
+        <div class="container text-center">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="card h-100 p-4">
+                        <i class="fa-solid fa-network-wired fa-3x mb-3 text-info"></i>
+                        <h5 class="fw-bold">Networking</h5>
+                        <p class="small text-muted">Konfigurasi Cisco Packet Tracer, Subnetting, dan pemahaman mendalam tentang OSI Layer.</p>
+                        <div class="mt-auto border-top pt-3">
+                            <p class="small fw-bold mb-2 text-uppercase" style="font-size: 0.7rem;">Verified Badge:</p>
+                            <a href="https://www.credly.com/badges/d59a4559-81eb-4de0-9e75-b7c464bec2b9" target="_blank">
+                                <img src="https://images.credly.com/size/340x340/images/70d71df5-f3dc-4380-9b9d-f22513a70417/CCNAITN__1_.png" class="badge-verified" alt="Credly Certification">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 p-4">
+                        <i class="fa-solid fa-database fa-3x mb-3 text-info"></i>
+                        <h5 class="fw-bold">Database Design</h5>
+                        <p class="small text-muted">Normalisasi Database (2NF, 3NF) dan perancangan ERD menggunakan PowerDesigner.</p>
+                        <div class="mt-auto">
+                            <span class="badge rounded-pill bg-info text-dark">SQL Master</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 p-4">
+                        <i class="fa-brands fa-java fa-3x mb-3 text-info"></i>
+                        <h5 class="fw-bold">Programming</h5>
+                        <p class="small text-muted">Pengembangan aplikasi berbasis Java dengan fokus pada Object Oriented Programming (OOP).</p>
+                        <div class="mt-auto">
+                            <span class="badge rounded-pill bg-info text-dark">Java Developer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 p-4 border-start border-primary border-4">
+                        <h5 class="fw-bold text-primary">Sui Blockchain DApp</h5>
+                        <p class="small text-muted">Eksperimen membangun aplikasi terdesentralisasi (DApps) menggunakan Move language pada ekosistem Sui Blockchain.</p>
+                        <div class="mt-2">
+                            <span class="badge bg-secondary">Blockchain</span>
+                            <span class="badge bg-secondary">Move</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 p-4 border-start border-primary border-4">
+                        <h5 class="fw-bold text-primary">Database Normalization System</h5>
+                        <p class="small text-muted">Mendesain skema database yang efisien dari System Flow mentah hingga tahap 3NF untuk efisiensi penyimpanan data.</p>
+                        <div class="mt-2">
+                            <span class="badge bg-secondary">SQL</span>
+                            <span class="badge bg-secondary">ERD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="bg-light-custom">
+        <div class="container text-center">
+            <h2 class="section-title">What I Do</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 text-center">
+                        <div class="icon-box mx-auto"><i class="fa-solid fa-code fa-lg"></i></div>
+                        <h5 class="fw-bold">Back-end Dev</h5>
+                        <p class="small text-muted">Membangun logika aplikasi kuat dengan Java dan manajemen database terstruktur.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 text-center">
+                        <div class="icon-box mx-auto"><i class="fa-solid fa-gears fa-lg"></i></div>
+                        <h5 class="fw-bold">DB Optimization</h5>
+                        <p class="small text-muted">Normalisasi database agar sistem berjalan cepat tanpa redundansi data.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 text-center">
+                        <div class="icon-box mx-auto"><i class="fa-solid fa-route fa-lg"></i></div>
+                        <h5 class="fw-bold">Network Setup</h5>
+                        <p class="small text-muted">Merancang topologi LAN aman dengan perhitungan subnetting tepat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="text-white py-5" style="background-color: var(--primary-color);">
+        <div class="container">
+            <div class="row g-5 text-center text-md-start">
+                <div class="col-md-6">
+                    <h2 class="fw-bold mb-4">Hubungi Saya</h2>
+                    <p class="mb-4 text-light">Terbuka untuk kolaborasi proyek atau diskusi seputar IT.</p>
+                    <div class="d-flex justify-content-center justify-content-md-start mb-4">
+                        <a href="https://github.com/Darkgame2" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.credly.com/users/ignasius-angello" target="_blank" class="social-link"><i class="fa-solid fa-certificate"></i></a>
+                        <a href="mailto:ignasius3llo@Gmail.com" class="social-link"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                    <p class="small text-light">Email: <strong>ignasius3llo@Gmail.com</strong></p>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-4">Tautan Eksternal</h5>
+                    <div class="list-group shadow-sm">
+                        <a href="https://machung.ac.id/" target="_blank" class="list-group-item list-group-item-action bg-dark text-white border-secondary">
+                            <i class="fa-solid fa-university me-2 text-info"></i>Universitas Ma Chung
+                        </a>
+                        <a href="https://lockey-irawan.github.io/" target="_blank" class="list-group-item list-group-item-action bg-dark text-white border-secondary">
+                            <i class="fa-solid fa-user-tie me-2 text-info"></i>Lockey Irawan (Project Manager)
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-5 border-secondary">
+            <p class="text-center small text-muted mb-0">&copy; 2026 Ignasius Angello. Built with Bootstrap 5.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const toggleBtn = document.getElementById('darkModeToggle');
+        const htmlElement = document.documentElement;
+        const icon = toggleBtn.querySelector('i');
+
+        toggleBtn.addEventListener('click', () => {
+            if (htmlElement.getAttribute('data-bs-theme') === 'dark') {
+                htmlElement.setAttribute('data-bs-theme', 'light');
+                icon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                htmlElement.setAttribute('data-bs-theme', 'dark');
+                icon.classList.replace('fa-moon', 'fa-sun');
+            }
+        });
+    </script>
+</body>
+</html>
